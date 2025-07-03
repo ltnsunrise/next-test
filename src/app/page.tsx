@@ -1,21 +1,19 @@
-import "server-only";
-
-import TodoList from "@/components/features/TodoList";
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Suspense } from "react";
+import LogginButton from "@/components/auth/login-button";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="p-6">
-      <div className="w-full max-w-lg mx-auto pb-10">
-        <CardHeader>
-          <CardTitle className="text-2xl">To-Do List</CardTitle>
-          <CardDescription>Add new tasks to your to-do list</CardDescription>
-        </CardHeader>
+    <main>
+      <div className="h-screen flex flex-col gap-y-4 items-center justify-center bg-linear-to-r/srgb from-indigo-500 to-teal-400">
+        <p className="text-white">A simple authentication service</p>
+        <div>
+          <LogginButton>
+            <Button variant={"outline"} size="lg">
+              Sign in
+            </Button>
+          </LogginButton>
+        </div>
       </div>
-      <Suspense fallback={<div className="text-center">Loading...</div>}>
-        <TodoList />
-      </Suspense>
-    </div>
+    </main>
   );
 }
